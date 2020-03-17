@@ -6,3 +6,4 @@ This is a standard repository that we will use during isolation to showoff our P
 
 Finally i will push this online usingn the following steps:
 
+CTRL+SHIFT+P
