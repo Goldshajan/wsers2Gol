@@ -7,7 +7,10 @@
 <body>
 <?php
 
+// 
+// LOAD THE credentials.php using include_once !
 
+// GOOD ! FILL THIS IN AND MAKE THIS WORK !!
 $connection =mysqli_connect($servername, $username, $password, $database);
 
 if (!$connection) {
