@@ -2,7 +2,7 @@
 
 <body>
     <?php
-    include_once("credentials.php");
+    //include_once("credentials.php");
     // Create connection
     $connection = mysqli_connect($servername, $username, $password, $database);
     // Check connection
@@ -52,7 +52,7 @@
                         while ($row = $result->fetch_assoc()) {
                             echo '<option value="' . $row["COUNTRY_ID"] . '">' . $row["COUNTRY_NAME"] . '</option>';
                         }
-                    } else {
+                    } else{
                         echo "0 results";
                     }
                     $connection->close();
