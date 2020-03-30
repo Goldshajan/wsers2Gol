@@ -2,7 +2,7 @@
 
 <body>
     <?php
-    //include_once("credentials.php");
+    include_once("credentials.php");
     // Create connection
     $connection = mysqli_connect($servername, $username, $password, $database);
     // Check connection
