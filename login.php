@@ -20,10 +20,10 @@
         die("connection failed: " . mysqli_connect_error());
     }
     if (
-        isset($_GET["Username"]) &&
-        isset($_GET["Password"])
+        isset($_POST["Username"]) &&
+        isset($_POST["Password"])
     ) {
-        print "You are about to register<BR>";
+        print "You are about to login<BR>";
     } else {
 
 //When i load it give me anything. could you give me any ideas please!
@@ -50,7 +50,7 @@
                 $connection->close();
                 ?>
             </select>
-            <input type="submit" name="Register" value="Register">
+            <input type="submit" name="Login" value="Login">
         </form>
 
 
