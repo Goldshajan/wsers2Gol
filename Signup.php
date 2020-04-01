@@ -28,8 +28,8 @@
             $stmt = $connection->prepare("INSERT INTO ppl(First_Name,Second_Name,Age,UserName,Password,Nationality) VALUES(?,?,?,?,?,?)");
 
             $hashedPassword = password_hash($_GET["Password"], PASSWORD_BCRYPT);
-            
-            $stmt->bind_param("ssissi", $_GET["FirstName"], $_GET["LastName"], $_GET["Age"], $_GET["Username"], $_GET["Password"], $_GET["Country"]);
+
+            $stmt->bind_param("ssissi", $_GET["FirstName"], $_GET["LastName"], $_GET["Age"], $_GET["Username"], $hashedPassword, $_GET["Country"]);
             $stmt->execute();
             print "Yaaay you have registered. Check the database <BR>";
         }
