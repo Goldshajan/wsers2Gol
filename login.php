@@ -26,7 +26,6 @@
         print "You are about to login<BR>";
     } else {
 
-//When i load it give me anything. could you give me any ideas please!
     ?>
 
         <form action="login.php" method="post">
@@ -50,7 +49,10 @@
                 $connection->close();
                 ?>
             </select>
-            <input type="submit" name="Register" value="login">
+
+
+            <input type="submit" name="Login" value="Login">
+
         </form>
 
 
