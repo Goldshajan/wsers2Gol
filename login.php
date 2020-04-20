@@ -24,32 +24,32 @@
         isset($_POST["Password"])
     ) {
         print "You are about to login<BR>";
-    } else {
 
-    ?>
+        $stmt = $connection->prepare("SELECT * FROM ppl WHERE UserName ?");
+        $stmt->bind_param("s", $_POST["Username"]);
+        $stmt->execute();
+        $stmt = $stmt->get_result();
+        $row = $result->fetch_assoc();
+
+        if ($result->num_row > 0) {
+            print "You EXIST in our database ";
+            if (password_verify($_POST["Password"], $row["Password"])) {
+                print "You have the right password -> LOGIN successfull";
+            } else {
+                print "Wrong Password";
+            }
+        } else {
+            print "Your username is not in our database !! Please consider registering !";
+    ?> <a href="Signup.php">Go to the signup page</a>
+            <a href="login.php">Try again</a>
+        <?php
+        }
+    } else {
+        ?>
 
         <form action="login.php" method="post">
             UserName: <input type="text" name="Username" required><br>
             Password: <input type="text" name="Password" required><br>
-
-            <select name="Country">
-                <?php
-                $stmt = $connection->prepare("SELECT * FROM countries");
-                $stmt->execute();
-                $result = $stmt->get_result();
-
-                if ($result->num_rows > 0) {
-                    // output data of each row
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<option value="' . $row["COUNTRY_ID"] . '">' . $row["COUNTRY_NAME"] . '</option>';
-                    }
-                } else {
-                    echo "0 results";
-                }
-                $connection->close();
-                ?>
-            </select>
-
 
             <input type="submit" name="Login" value="Login">
 
