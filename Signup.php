@@ -1,16 +1,20 @@
+<?php
+
+include_once "sessionCheck.php"; ?>
 <html>
 
 <body>
     <?php
-    include_once("credentials.php");
-    // Create connection
-    $connection = mysqli_connect($servername, $username, $password, $database);
-    // Check connection
-    if (!$connection) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-    if (
-        isset($_GET["FirstName"]) &&
+    include_once "credentials.php";
+
+    if (isset($_POST["Logout"])) {
+        session_destroy();
+        session_unset();
+    } elseif ($_SESSION["UserLog"]) {
+        print "You are already logged in, you can not signup twice";
+       // displayuser($connect);
+    } elseif (
+        isset($_POST["FirstName"]) &&
         isset($_GET["LastName"]) &&
         isset($_GET["Username"]) &&
         isset($_GET["Password"])
@@ -36,7 +40,7 @@
     } else {
 
 
-        ?>
+    ?>
         <form action="Signup.php" method="get">
             First name: <input type="text" name="FirstName" required><br>
             Last name: <input type="text" name="LastName" required><br>
@@ -46,20 +50,20 @@
 
             <select name="Country">
                 <?php
-                    $stmt = $connection->prepare("SELECT * FROM countries");
-                    $stmt->execute();
-                    $result = $stmt->get_result();
+                $stmt = $connection->prepare("SELECT * FROM countries");
+                $stmt->execute();
+                $result = $stmt->get_result();
 
-                    if ($result->num_rows > 0) {
-                        // output data of each row
-                        while ($row = $result->fetch_assoc()) {
-                            echo '<option value="' . $row["COUNTRY_ID"] . '">' . $row["COUNTRY_NAME"] . '</option>';
-                        }
-                    } else{
-                        echo "0 results";
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<option value="' . $row["COUNTRY_ID"] . '">' . $row["COUNTRY_NAME"] . '</option>';
                     }
-                    $connection->close();
-                    ?>
+                } else {
+                    echo "0 results";
+                }
+                $connection->close();
+                ?>
             </select>
             <br>
             <input type="submit" name="Register" value="Register">

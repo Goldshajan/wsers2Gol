@@ -8,17 +8,14 @@
 
 <body>
     <?php
-    include_once("credentials.php");
+    include_once "credentials.php";
+    include_once "sessionCheck.php";
 
+function displayUser($connect)
 
     // LOAD THE credentials.php using include_once !
 
-    // GOOD ! FILL THIS IN AND MAKE THIS WORK !!
-    $connection = mysqli_connect($servername, $username, $password, $database);
-
-    if (!$connection) {
-        die("connection failed: " . mysqli_connect_error());
-    }
+   
     if (
         isset($_POST["Username"]) &&
         isset($_POST["Password"])
