@@ -1,0 +1,70 @@
+#navigationBar {
+  display: flex;
+  background-color: aquamarine;
+  justify-content: space-between;
+}
+
+#navigationTittle {
+  background-color: aquamarine;
+  font-family: cursive;
+  font-size: large;
+  padding: 20px;
+}
+
+#navigationLinks a {
+  text-decoration: none;
+  padding: 20px;
+  font-size: large;
+}
+
+#navigationLinks {
+  display: flex;
+  align-items: center;
+  background-color: darkgoldenrod;
+}
+
+#navigationLanguage {
+  display: flex;
+  align-items: center;
+  background-color: darkgoldenrod;
+}
+
+#Signup {
+  display: flex;
+  align-items: center;
+  background-color: red;
+}
+
+#login {
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+#login form {
+  background-color: yellowgreen;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+#login form div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 5px;
+  width: 100%;
+}
+
+#AllProducts {
+  display: flex;
+  justify-content: space-around;
+  flex: wrap;
+  align-items: center;
+}
+
+.Product {
+  text-align: center;
+}
