@@ -62,12 +62,13 @@ include_once "sessionCheck.php"; ?>
     } else {
        ?>
         <form action="Signup.php" method="post">
-            First name: <input type="text" name="FirstName" placeholder="First Name" required><br>
-            Last name: <input type="text" name="LastName" placeholder="Last Name" required><br>
-            Age: <input type="text" name="Age" placeholder="Age" required><br>
-            UserName: <input type="text" name="Username" placeholder="Username" required><br>
-            Password: <input type="password" name="Password" placeholder="Password" required><br>
-
+          <table>
+          <tr><td> First name: <input type="text" name="FirstName" placeholder="First Name" required></td></tr>
+          <tr><td> Last name: <input type="text" name="LastName" placeholder="Last Name" required></td></tr>
+          <tr><td> Age: <input type="text" name="Age" placeholder="Age" required></td></tr>
+          <tr><td> UserName: <input type="text" name="Username" placeholder="Username" required></td></tr>
+          <tr><td> Password: <input type="password" name="Password" placeholder="Password" required></td></tr>
+            </table>
             <select name="Country">
                 <?php
                 $stmt = $connection->prepare("SELECT * FROM countries");
@@ -77,11 +78,7 @@ include_once "sessionCheck.php"; ?>
                 if ($result->num_rows > 0) {
                   // output data of each row
                   while ($row = $result->fetch_assoc()) {
-                    echo '<option value="' .
-                      $row["COUNTRY_ID"] .
-                      '">' .
-                      $row["COUNTRY_NAME"] .
-                      '</option>';
+                    echo '<option value="' .$row["COUNTRY_ID"] .'">' . $row["COUNTRY_NAME"] . '</option>';
                   }
                 } else {
                   echo "0 results";
@@ -91,7 +88,7 @@ include_once "sessionCheck.php"; ?>
       ?>
             </select>
             <br>
-            <input type="submit" name="Register" value="Register">
+            <input type="submit" name="Register" id="RegisterButton" value="Register">
         </form>
     <?php
     }

@@ -15,9 +15,7 @@ if (isset($_POST["Logout"])) {
   print "You have already been logged-in" . "<br>";
   displayUserDetails($connection);
 } elseif (isset($_POST["Username"]) && isset($_POST["Password"])) {
-  $userFromMyDatabase = $connection->prepare(
-    "SELECT * FROM ppl WHERE UserName=?"
-  );
+  $userFromMyDatabase = $connection->prepare("SELECT * FROM ppl WHERE UserName=?");
   $userFromMyDatabase->bind_param("s", $_POST["Username"]);
   $userFromMyDatabase->execute();
   $result = $userFromMyDatabase->get_result();
@@ -27,6 +25,9 @@ if (isset($_POST["Logout"])) {
     if (password_verify($_POST["Password"], $row["Password"])) {
       $_SESSION["UserLogged"] = true;
       $_SESSION["CurrentUser"] = $row["PERSON_ID"];
+
+      $_SESSION["Basket"] = [];
+
       displayUserDetails($connection);
     } else {
       print "Password mismatched ! Please type your password correctly";
