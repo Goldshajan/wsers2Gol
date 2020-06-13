@@ -2,8 +2,20 @@
 include_once "sessionCheck.php"; ?>
 
 <html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' media='screen' href='2tpifeGol.css'>
+
+    
+  <title>Signup</title>
+
+</head>
 
 <body>
+<h1 class="shajan">HUB
+    <br>International free shipping All Europe </h1>
+ 
     <?php
     include_once "credentials.php";
     include_once "displayUser.php";
@@ -16,12 +28,7 @@ include_once "sessionCheck.php"; ?>
     } elseif ($_SESSION["UserLogged"]) {
       print "You are already logged in. You cannot signup twice...";
       displayUserDetails($connection);
-    } elseif (
-      isset($_POST["FirstName"]) &&
-      isset($_POST["LastName"]) &&
-      isset($_POST["Username"]) &&
-      isset($_POST["Password"])
-    ) {
+    } elseif (isset($_POST["FirstName"]) && isset($_POST["LastName"]) && isset($_POST["Username"]) && isset($_POST["Password"])) {
       print "You have been successfully registered<br>";
       $isUserThere = $connection->prepare("SELECT * FROM ppl WHERE UserName=?");
       $isUserThere->bind_param("s", $_POST["Username"]);
@@ -30,9 +37,7 @@ include_once "sessionCheck.php"; ?>
       if ($result->num_rows > 0) {
         print "The username you typed has already been taken ! Please try another one <br>";
       } else {
-        $stmt = $connection->prepare(
-          "INSERT INTO ppl(First_Name,Second_Name,Age,UserName,Password,Nationality,User_type) VALUES(?,?,?,?,?,?,?)"
-        );
+        $stmt = $connection->prepare("INSERT INTO ppl(First_Name,Second_Name,Age,UserName,Password,Nationality,User_type) VALUES(?,?,?,?,?,?,?)");
         $hashedPassword = password_hash($_POST["Password"], PASSWORD_BCRYPT);
         $userDefault = 2;
         $stmt->bind_param(
@@ -48,9 +53,7 @@ include_once "sessionCheck.php"; ?>
         $stmt->execute();
         print "You have been registered. Check the database <br>";
         $_SESSION["UserLogged"] = true;
-        $newSelectStatement = $connection->prepare(
-          "SELECT PERSON_ID FROM ppl WHERE UserName=?"
-        );
+        $newSelectStatement = $connection->prepare("SELECT PERSON_ID FROM ppl WHERE UserName=?");
         $newSelectStatement->bind_param("s", $_POST["Username"]);
         $newSelectStatement->execute();
         $resultingUser = $newSelectStatement->get_result();
@@ -61,14 +64,15 @@ include_once "sessionCheck.php"; ?>
       }
     } else {
        ?>
-        <form action="Signup.php" method="post">
+       
+          <form action="Signup.php" method="post">
           <table>
-          <tr><td> First name: <input type="text" name="FirstName" placeholder="First Name" required></td></tr>
-          <tr><td> Last name: <input type="text" name="LastName" placeholder="Last Name" required></td></tr>
-          <tr><td> Age: <input type="text" name="Age" placeholder="Age" required></td></tr>
-          <tr><td> UserName: <input type="text" name="Username" placeholder="Username" required></td></tr>
-          <tr><td> Password: <input type="password" name="Password" placeholder="Password" required></td></tr>
-            </table>
+              <tr><td> First name: <input type="text" name="FirstName" placeholder="First Name" required></td></tr>
+              <tr><td> Last name: <input type="text" name="LastName" placeholder="Last Name" required></td></tr>
+              <tr><td> Age: <input type="text" name="Age" placeholder="Age" required></td></tr>
+              <tr><td> UserName: <input type="text" name="Username" placeholder="Username" required></td></tr>
+              <tr><td> Password: <input type="password" name="Password" placeholder="Password" required></td></tr>
+        </table>
             <select name="Country">
                 <?php
                 $stmt = $connection->prepare("SELECT * FROM countries");
@@ -78,7 +82,7 @@ include_once "sessionCheck.php"; ?>
                 if ($result->num_rows > 0) {
                   // output data of each row
                   while ($row = $result->fetch_assoc()) {
-                    echo '<option value="' .$row["COUNTRY_ID"] .'">' . $row["COUNTRY_NAME"] . '</option>';
+                    echo '<option value="' . $row["COUNTRY_ID"] . '">' . $row["COUNTRY_NAME"] . '</option>';
                   }
                 } else {
                   echo "0 results";
@@ -88,7 +92,7 @@ include_once "sessionCheck.php"; ?>
       ?>
             </select>
             <br>
-            <input type="submit" name="Register" id="RegisterButton" value="Register">
+            <input type="submit" name="Register" id="SignupButton" value="Register">
         </form>
     <?php
     }

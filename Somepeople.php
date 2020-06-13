@@ -9,7 +9,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
-    <form action="somepeople.php" method="post">
+    <form action="somePeople.php" method="post">
         Filter people by country:
         <select name="countrySelect" id="">
             <option value="0">No filter</option>
@@ -41,21 +41,26 @@
       }
     }
     if ($displayAll) {
-      $sqlSelect = $connection->prepare("SELECT * FROM ppl");
+      $sqlSelect = $connection->prepare("SELECT * FROM peoplewithcountries");
     } else {
-      $sqlSelect = $connection->prepare("SELECT * FROM ppl WHERE NATIONALITY=?");
+      $sqlSelect = $connection->prepare("SELECT * FROM peoplewithcountries WHERE NATIONALITY=?");
       $sqlSelect->bind_param("i", $_POST["countrySelect"]);
     }
     $sqlSelect->execute();
     $result = $sqlSelect->get_result();
+    $countUsers = 1;
     while ($row = $result->fetch_assoc()) {
+      print "<br>";
+      print $countUsers . "\n";
       print $row["First_Name"] . "<br>";
       print $row["Second_Name"] . "<br>";
       print $row["Age"] . "<br>";
       print $row["UserName"] . "<br>";
-      print $row["User_type"] . "<br>" . "<br>";
+      print $row["User_type"] . "<br>";
+      print $row["COUNTRY_NAME"] . "<br>";
+      $countUsers++;
     }
     ?>
- 
+
 </body>
 </html>

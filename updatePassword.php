@@ -45,16 +45,15 @@ if (count($_POST) > 0) {
   if ($_POST["currentPassword"] == $row["password"]) {
     mysqli_query(
       $conn,
-      "UPDATE users set password='" .
-        $_POST["newPassword"] .
-        "' WHERE userId='" .
-        $_SESSION["userId"] .
-        "'"
-    );
+      "UPDATE users set password='" . $_POST["newPassword"] . "' WHERE userId='" .$_SESSION["userId"] . "'");
+
     $message = "Password Changed";
-  } else {
+
+  } 
+else {
     $message = "Current Password is not correct";
   }
 }
 ?>
-</body></html>
+</body>
+</html>

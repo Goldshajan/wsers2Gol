@@ -2,7 +2,7 @@
 $servername = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'gold'
+$database = 'gold';
 
 $connection = mysqli_connect($servername, $username, $password, $database);
 

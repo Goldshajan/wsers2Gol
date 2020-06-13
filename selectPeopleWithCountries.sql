@@ -1,0 +1,2 @@
+select First_Name, COUNTRY_NAME
+FROM peoplewithcountries
