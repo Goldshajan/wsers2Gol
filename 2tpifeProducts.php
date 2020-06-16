@@ -156,7 +156,7 @@ include_once "displayUser.php";
     ?>
   </div>
 
-<div><a href="finishOrder.php"><h3>BASKET</h3></a><?php print sizeof($_SESSION["Basket"]);?> </div>
+<div class="BasketLink"><a href="finishOrder.php"><h3>BASKET</h3></a><?php print sizeof($_SESSION["Basket"]);?> </div>
   
   <div id="AllProducts">
 
