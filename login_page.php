@@ -2,6 +2,57 @@
 include_once "sessionCheck.php";
 include_once "credentials.php";
 include_once "displayUser.php";
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Products</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='2tpifeGol.css'>
+  <style>
+    .shajan {
+      padding: 200;
+      text-align: center;
+
+      height: 100px;
+      background: linear-gradient(rgb(245, 3, 253), rgb(253, 4, 232), rgb(255, 255, 255));
+
+    }
+
+    .active {
+      background-color: rgb(214, 63, 194);
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="shajan">HUB
+    <br>International free shipping All Europe </h1>
+  <h1></h1>
+  <ul>
+    <li>
+      <a href="2tpifeHome.php">Home</a>
+    </li>
+    <li>
+      <a  href="2tpifeProducts.php">Products</a>
+    </li>
+    <li>
+      <a href="2tpifeAbout.php">About</a>
+    </li>
+    <li style="float: right">
+      <a href="Signup.php">Signup</a>
+    </li>
+    <li style="float: right">
+      <a class="active" href="login_page.php">login</a>
+    </li>
+  </ul>
+<?php
+include_once "sessionCheck.php";
+include_once "credentials.php";
+include_once "displayUser.php";
 
 if (isset($_POST["Logout"])) {
 
@@ -47,3 +98,6 @@ if (isset($_POST["Logout"])) {
     </form>
 <?php
 } ?>
+</body>
+
+</html>

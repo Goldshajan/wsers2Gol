@@ -6,16 +6,42 @@ include_once "sessionCheck.php"; ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' type='text/css' media='screen' href='2tpifeGol.css'>
+  <style>
+      .shajan {
+      padding: 20;
+      text-align: center;
+      height: 100px;
+      background: linear-gradient(rgb(1, 236, 253), rgb(3, 220, 248), rgb(255, 255, 255));
+    }
+    .active {
+      background-color: rgb(12, 135, 236);
+    }
 
-    
+    </style>
   <title>Signup</title>
-
 </head>
 
 <body>
 <h1 class="shajan">HUB
-    <br>International free shipping All Europe </h1>
- 
+    <br>WELCOME</h1>
+    <h1></h1>
+  <ul>
+    <li>
+      <a href="2tpifeHome.php">Home</a>
+    </li>
+    <li>
+      <a href="2tpifeProducts.php">Products</a>
+    </li>
+    <li>
+      <a href="2tpifeAbout.php">About</a>
+    </li>
+    <li style="float: right">
+      <a class="active" href="Signup.php">Signup</a>
+    </li>
+    <li style="float: right">
+      <a href="login_page.php">login</a>
+    </li>
+  </ul>
     <?php
     include_once "credentials.php";
     include_once "displayUser.php";
@@ -60,7 +86,7 @@ include_once "sessionCheck.php"; ?>
         $rowCurrentId = $resultingUser->fetch_assoc();
         $_SESSION["CurrentUser"] = $rowCurrentId["PERSON_ID"];
         displayUserDetails($connection);
-        /* ?><a href="login_page.php">Go To the login page</a><?php */
+  
       }
     } else {
        ?>

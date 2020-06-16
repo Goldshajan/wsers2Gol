@@ -6,8 +6,8 @@
     <title>Administration</title>
     <link rel='stylesheet' type='text/css' media='screen' href='2tpifeGol.css'>
     <style>
-    
-  </style>
+
+    </style>
 </head>
 
 <body>
@@ -15,9 +15,13 @@
     include_once "sessionCheck.php";
     include_once "credentials.php";
 
-    if (!$_SESSION["UserLogged"]) { ?>
-        <img src="noAccessSign.jpg">
-        <a href='2tpifeProducts.php'> Go to the products page </a>
+    if (!$_SESSION["UserLogged"]) {
+        print "You are not allowed here!";
+    ?>
+
+        <a href='2tpifeProducts.php'>
+            <h1>Go to the products page</h1>
+        </a>
     <?php exit();
     }
 
@@ -29,7 +33,6 @@
     if ($rowUser["User_type"] !== 1) {
     ?>
 
-        <a href='2tpifeProducts.php'> Go to the products page </a>
     <?php exit();
     }
     if (isset($_POST["userToDelete"])) {
@@ -42,17 +45,16 @@
     $users->execute();
     $resultUsers = $users->get_result();
     while ($rowUsers = $resultUsers->fetch_assoc()) { ?>
-        <table>
-            <form action="Administration.php" method="post">
-                <input type="hidden" name="userToDelete" value="<?php print $rowUsers["UserName"]; ?>">
-                <tr>
-                    <td>
-                        <?php print $rowUsers["UserName"]; ?>
-                    </td>
-                    <td><input type="submit" name="Delete" id="deleteButton" value="Delete"></td>
-                </tr>
-            </form>
-        </table> <br><br>
+
+        <form action="Administration.php" method="post">
+            <input type="hidden" name="userToDelete" value="<?php print $rowUsers["UserName"]; ?>">
+
+            <?php print $rowUsers["UserName"]; ?>
+            <input type="submit" name="Delete" id="deleteButton" value="Delete">
+
+        </form>
+        <br>
+        <br>
 
     <?php }
     if (isset($_POST["Add"])) {
@@ -77,7 +79,10 @@
                 <td>Picture: <input type="text" name="Picture" placeholder="Picture" required></td>
             </tr>
             <tr>
-                <td><input type="submit" name="Add" id="addButton" value="Add"></td>
+                <td><input type="submit" name="Add" id="addButton" value="AddProducts"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="userToDelete" value="DeleteItem"></td>
             </tr>
         </form>
     </table>

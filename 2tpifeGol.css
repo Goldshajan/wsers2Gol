@@ -1,37 +1,224 @@
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 5px;
-  overflow: hidden;
-  background-color: rgb(49, 48, 48);
-  
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    background-color: rgb(49, 48, 48);
 }
 
 li {
-  float: left;
+    float: left;
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 li a:hover:not(.active) {
-  background-color: rgb(202, 208, 209);
+    background-color: rgb(202, 208, 209);
 }
 
-.homecontainer {
-  display: flex;
-  justify-content: center;
-  background-color: rgb(173, 222 , 241);
+body {
+    background-color: rgb(253, 253, 251);
+}
+
+s .homecontainer {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(173, 222, 241);
 }
 
 .heading {
-  display : flex;
-  justify-content: center;
-  text-decoration: underline;
-   text-decoration-line: underline;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    text-decoration-line: underline;
+}
+
+#AllProducts {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    background-color: rgb(241, 151, 241);
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Product {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.myFlexContainer2 {
+    display: flex;
+    background-color: rgb(127, 242, 250);
+    padding: 25px;
+    justify-content: space-around;
+}
+
+.downphotos {
+    display: flex;
+    align-items: flex-end;
+}
+
+.boxdown {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.downintrophoto {
+    display: flex;
+    padding: 10px;
+    background-color: rgb(219, 231, 233);
+    justify-content: space-around;
+}
+
+.downbox {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    background-color: rgb(128, 207, 207);
+}
+
+.down3 {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(255, 255, 253);
+}
+
+.table1 {
+    display: flex;
+    padding: 10px;
+    background-color: rgb(232, 234, 235);
+    border: 2px solid rgb(5, 4, 78);
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.subcribe1 {
+    display: flex;
+    color: rgb(7, 149, 231);
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.secondbox {
+    display: flex;
+    background-color: rgb(247, 167, 167);
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    border: 5px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-top-left-radius: 25px;
+    box-shadow: 15px 15px #eb2121;
+}
+
+.thirdbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #fa5757;
+}
+
+.thirdbox2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: underline;
+    text-decoration-line: underline;
+}
+
+.doc1 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 5px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 50px 20px;
+}
+
+.doc2 {
+    display: flex;
+    background-color: rgb(226, 105, 105);
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.imageabout {
+    display: flex;
+    border: 15px solid transparent;
+    padding: 15px;
+    border-image-repeat: stretch;
+    border-image-slice: 30;
+}
+
+.table3 {
+    display: flex;
+    padding: 10px;
+    background-color: rgb(245, 106, 106);
+    border: 2px solid rgb(241, 31, 31);
+    padding: 10px;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+.subcribe3 {
+    display: flex;
+    color: rgb(173, 17, 17);
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table2 {
+    display: flex;
+    padding: 10px;
+    background-color: rgb(235, 150, 243);
+    border: 2px solid rgb(168, 43, 162);
+    padding: 10px;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+.subcribe2 {
+    display: flex;
+    color: rgb(185, 14, 143);
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table1 {
+    display: flex;
+    padding: 10px;
+    background-color: rgb(241, 67, 81);
+    border: 2px solid rgb(243, 45, 94);
+    padding: 10px;
+    border-radius: 25px;
+    justify-content: center;
 }

@@ -42,8 +42,11 @@ include_once "displayUser.php";
     <li>
       <a class="active" href="2tpifeAbout.php">About</a>
     </li>
-    <li style="float: right">
+    <li style="float: right" >
       <a href="Signup.php">Signup</a>
+    </li>
+    <li style="float: right">
+      <a href="login_page.php">login</a>
     </li>
   </ul>
 
@@ -51,9 +54,6 @@ include_once "displayUser.php";
     <h1>All kind of shoes for women and men</h1>
   </div>
   <br>
-  <div class="homecontainer">
-    <img class="myhomephoto" src="homepic.png" alt="human">
-  </div>
 
   <script>
     window.onscroll = function() {
@@ -149,11 +149,129 @@ include_once "displayUser.php";
                                                         } ?>
   </div>
 
-  <?php if (isset($_SESSION["UserLogged"])) {
-    if (!$_SESSION["UserLogged"]) { ?>
-      <div id="Signup"><a href="Signup.php">Signup</a></div>
-  <?php }
-  } ?>
+  
+
+  <div class="homecontainer">
+    <img class="myhomephoto" src="homepic.png" alt="human">
+  </div>
+  <br>
+  <div class="secondbox">
+        <div class="LeftSide">
+            <h2>ABOUT HUB FOOTWEAR</h2>
+            <p>Since its foundation in 2004, HUB has remained focused on its main objective, to only design high-quality footwearthat</p>
+            <p> is truly timeless. The brand represents an athletic, metropolitan lifestyle, combined with a clean, minimalist
+                appearance.
+            </p>
+            <p>An attitude and style that is expressed clearly throughout each collection. HUB’s founder Huub van Boeckel, a
+                former
+            </p>
+            <p>professional tennis player, never lost his strong mentality or his love for sneakers – which inspired him to
+                start
+            </p>
+            <p>developing his own sneaker. Each season, these characteristics are closely observed and will serve as an inspiration</p>
+            <p>to reinvent some of the classic designs, resulting in a must-have for the next season.Materials, patterns, style</p>
+            <p>and subtle details are all reworked in order to create a unique range of clean, minimalist styles, thus staying
+                true
+            </p>
+            <p>to the roots and ideals of this Dutch firm.</p>
+        </div>
+
+
+        <img src="aboutfirst.png" alt="shoe">
+
+
+    </div>
+    <br>
+    <br>
+
+    <div class="thirdbox">
+        <div class="aboutpic">
+            <img src="aboutpic.png" alt="human" width="800" height="600">
+        </div>
+        <div class="thirdbox2">
+            <h2>HUB’s founder Huub van Boeckel,</h2>
+            <h2>aformer professional tennis player</h2>
+            <h2>never lost his strong mentality or</h2>
+            <h2>his love fro sneakers. As a result, HUB</h2>
+            <h2>Footwear was born in 2004.</h2>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="doc2">
+        <div class="doc1">
+            <h1 class="head">TENNIS INSPIRED</h1>
+            <h4>What strated as dream to create a tennis shoe for daily life, soon became arange of classic and iconic footwear</h4>
+            <h4>silhouettes. This season,HUB is celebrating its philosophy by giving our key styles rhe ultinate Tennis Inspired</h4>
+            <h4>look the hook and the zone all leather executions. Mainly white uppers and perforated detalis, referring</h4>
+            <h4>back the sophisticated classic Tennis style. A fresh and clean look which will be easy-to-wear in any modern</h4>
+            <h4>lifestyle.</h4>
+
+        </div>
+        <div class="imageabout">
+            <img src="about3pic.png" alt="human" width="700" height="600">
+        </div>
+    </div>
+
+<br>
+<br>
+<br>
+
+<div class="table3">
+        <table>
+          <tr>
+            <th>COLLECTIONS</th>
+            <th>CUSTOMER SERVICE</th>
+            <th>ABOUT US</th>
+            <th>SOCIAL</th>
+          </tr>
+          <tr>
+            <td>Men leather sneakers</td>
+            <td>frequently asked qustions</td>
+            <td>Our Story</td>
+            <td>instagram</td>
+          </tr>
+          <tr>
+            <td>Men canvas sneakers</td>
+            <td>Size chart</td>
+            <td>Video</td>
+            <td>facebook</td>
+          </tr>
+          <tr>
+            <td>Women leather sneakers</td>
+            <td>Delivery & return</td>
+            <td>Sustainability</td>
+            <td>Vimeo</td>
+          </tr>
+          <tr>
+            <td>Women canvas sneakers</td>
+            <td>Payment</td>
+            <td>Blog</td>
+            <td>Twitter</td>
+          </tr>
+    
+        </table>
+      </div>
+      <br>
+      <br>
+    
+      <div class="subcribe3">
+        <h2>SUBCRIBE TO NEWSLETTER</h2>
+        <h3>Thank you for visiting my page</h3>
+        <strong>Goldshajan Goldwin Ignasius</strong>
+    
+      </div>
+      <br>
+      <br>
+    
+
+    
+    </body>
+    
+    </html>
+
 
 </body>
 
