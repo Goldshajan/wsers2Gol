@@ -11,8 +11,7 @@ function displayUserDetails($connection)
     $userFromMyDatabase->execute();
     $result = $userFromMyDatabase->get_result();
     $row = $result->fetch_assoc();
-    // Normally -> I must have 1 single result
-    // But what if I don't ?!!
+    
     if ($result->num_rows == 0) {
       session_unset();
       session_destroy();

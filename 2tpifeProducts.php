@@ -1,7 +1,7 @@
 <?php
 include_once "sessionCheck.php";
-include_once "credentials.php";
 include_once "displayUser.php";
+include_once "credentials.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,9 +80,9 @@ include_once "displayUser.php";
     }
   </script>
   <div id="login">
-    <?php 
-    
-    if(isset($_POST["BuyItem"])){
+    <?php
+
+    if (isset($_POST["BuyItem"])) {
       array_push($_SESSION["Basket"], $_POST["BuyItem"]);
     }
     if (isset($_POST["Logout"])) {
@@ -134,12 +134,12 @@ include_once "displayUser.php";
 
           displayUserDetails($connection);
         } else {
-          print "Password mismatched ! Please type your password correctly"; ?>
+          print "Password Wrong! Please type your password correctly"; ?>
           <a href="2tpifeProducts.php">Try again to login</a>
         <?php
         }
       } else {
-        print "The username you typed has not been found in our database !!"; ?>
+        print "<h3>The username you typed has not been found in our database !!</h2>"; ?>
         <a href="Signup.php">
           <h2>PLEASE REGISTER YOUR ACCOOUNT FIRST</h2>
         </a> <br>
@@ -156,8 +156,10 @@ include_once "displayUser.php";
     ?>
   </div>
 
-<div class="BasketLink"><a href="finishOrder.php"><h3>BASKET</h3></a><?php print sizeof($_SESSION["Basket"]);?> </div>
-  
+  <div class="BasketLink"><a href="finishOrder.php">
+      <h3>BASKET</h3>
+    </a><?php print sizeof($_SESSION["Basket"]); ?> </div>
+
   <div id="AllProducts">
 
     <?php
@@ -172,10 +174,7 @@ include_once "displayUser.php";
         Price <?php print $row["Price"]; ?> &euro;<br>
         <form action="2tpifeProducts.php" method="post">
           <input type="hidden" name="BuyItem" value="<?php print $row["ID"]; ?>">
-          <input type="submit" name="BuyItem" id="BuyItem" value="AddToBasket"><br>
-
-          
-
+          <input type="submit" name="BuyItemButton" id="BuyItem" value="AddToBasket"><br>
         </form>
       </div>
     <?php }

@@ -222,3 +222,20 @@ s .homecontainer {
     border-radius: 25px;
     justify-content: center;
 }
+
+#AdminTable {
+    display: flex;
+    justify-content: center;
+    color: blue;
+    padding: 5px;
+}
+
+#addButton {
+    display: flex;
+    background-color: #eb2121;
+}
+
+#DeleteProduct {
+    display: flex;
+    background-color: red;
+}

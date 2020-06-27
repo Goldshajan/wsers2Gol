@@ -84,7 +84,7 @@ include_once "displayUser.php";
 
       session_unset();
       session_destroy();
-      print "You have been logged out successfully";
+      print "<h2>You have been logged out successfully</h2>";
 
     ?>
       <?php

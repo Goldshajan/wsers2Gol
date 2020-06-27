@@ -5,12 +5,46 @@
     <meta charset="UTF-8">
     <title>Administration</title>
     <link rel='stylesheet' type='text/css' media='screen' href='2tpifeGol.css'>
-    <style>
+<style>
+      .shajan {
+      padding: 200;
+      text-align: center;
+      height: 100px;
+      background: linear-gradient(rgb(253, 1, 77), rgb(212, 25, 72), rgb(255, 255, 255));
+    }
+
+    .active {
+      background-color: rgb(248, 2, 64);
+    }
+    body {
+        background-color: rgb(248, 143, 143);
+    }
 
     </style>
 </head>
 
 <body>
+<h1 class="shajan">HUB
+    <br>International free shipping All Europe </h1>
+  <h1></h1>
+  <ul>
+    <li>
+      <a href="2tpifeHome.php">Home</a>
+    </li>
+    <li>
+      <a href="2tpifeProducts.php">Products</a>
+    </li>
+    <li>
+      <a href="2tpifeAbout.php">About</a>
+    </li>
+    <li style="float: right">
+      <a href="Signup.php">Signup</a>
+    </li>
+    <li style="float: right">
+      <a href="login_page.php">login</a>
+    </li>
+  </ul>
+
     <?php
     include_once "sessionCheck.php";
     include_once "credentials.php";
@@ -24,7 +58,6 @@
         </a>
     <?php exit();
     }
-
     $userSelect = $connection->prepare("SELECT User_type FROM ppl WHERE PERSON_ID=?");
     $userSelect->bind_param("i", $_SESSION["CurrentUser"]);
     $userSelect->execute();
@@ -34,12 +67,17 @@
     ?>
 
     <?php exit();
+    }if (isset($_POST["userToDelete"])) {
+        $deleteItem = $connection->prepare("DELETE FROM products WHERE ID=?");
+        $deleteItem->bind_param("i",  $_POST["userToDelete"]);
+        $deleteItem->execute();
+        
+    }if($connection->query($deleteItem) === TRUE){
+        print "Item deleted successfully";
+    }else{
+        print "Error in deleting this Item";
     }
-    if (isset($_POST["userToDelete"])) {
-        $users = $connection->prepare("DELETE FROM ppl WHERE UserName=?");
-        $users->bind_param("s", $_POST["userToDelete"]);
-        $users->execute();
-    }
+    
     $users = $connection->prepare("SELECT UserName FROM ppl WHERE PERSON_ID <>?");
     $users->bind_param("i", $_SESSION["CurrentUser"]);
     $users->execute();
@@ -62,9 +100,20 @@
         $addProduct->bind_param("ssis", $_POST["ProductName"], $_POST["Description"], $_POST["Price"], $_POST["Picture"]);
         $addProduct->execute();
         $resultProduct = $addProduct->get_result();
+
     }
+    /*if (isset($_POST["userToDelete"])) {
+        $deleteItem = $connection->prepare("DELETE FROM products WHERE ID=?");
+        $deleteItem->bind_param("i",  $_POST["userToDelete"]);
+        $deleteItem->execute();
+        
+    }if($connection->query($deleteItem) === TRUE){
+        print "Products deleted successfully";
+    }else{
+        print "Error in deleting this Item";
+    }*/
     ?>
-    <table>
+    <table id="AdminTable">
         <form action="Administration.php" method="post">
             <tr>
                 <td>Name: <input type="text" name="ProductName" placeholder="Product Name" required></td>
@@ -82,10 +131,11 @@
                 <td><input type="submit" name="Add" id="addButton" value="AddProducts"></td>
             </tr>
             <tr>
-                <td><input type="submit" name="userToDelete" value="DeleteItem"></td>
+                <td><input type="submit" name="userToDelete" id="DeleteProduct" value="DeleteItem"></td>
             </tr>
         </form>
     </table>
+  
 
 </body>
 
