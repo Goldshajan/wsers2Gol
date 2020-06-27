@@ -16,6 +16,9 @@ include_once "sessionCheck.php"; ?>
     .active {
       background-color: rgb(12, 135, 236);
     }
+    body{
+      background-color: rgb(147, 238, 241);
+    }
 
     </style>
   <title>Signup</title>
@@ -52,7 +55,7 @@ include_once "sessionCheck.php"; ?>
       print "You have been successfully logged-out" . "<br>";
       ?><a href="login_page.php">Login page</a> <?php
     } elseif ($_SESSION["UserLogged"]) {
-      print "You are already logged in. You cannot signup twice...";
+      print "You are already logged in. You cannot signup twice... <BR>";
       displayUserDetails($connection);
     } elseif (isset($_POST["FirstName"]) && isset($_POST["LastName"]) && isset($_POST["Username"]) && isset($_POST["Password"])) {
       print "You have been successfully registered<br>";
