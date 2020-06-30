@@ -239,9 +239,3 @@ s .homecontainer {
     display: flex;
     background-color: red;
 }
-
-#deleteProduct {
-    display: flex;
-    justify-content: center;
-    background-color: red;
-}
