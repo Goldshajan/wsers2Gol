@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Administration</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='2tpife.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='2tpifeGol.css'>
   </head>
   <body>
       <?php
@@ -97,7 +97,7 @@
     </table> <br><br>
     <?php } ?>
     <table>
-        <form action="Adminisrtation.php" method="post">
+        <form action="Administration.php" method="post">
             <tr><td>Product's ID: <input type="text" name="itemToDelete" placeholder="Product's ID" required></td></tr>
             <tr><td><input type="submit" name="Delete" id="deleteButton" value="Delete"></td></tr>
         </form>
