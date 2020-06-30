@@ -45,9 +45,7 @@ include_once "displayUser.php";
     <li style="float: right" >
       <a href="Signup.php">Signup</a>
     </li>
-    <li style="float: right">
-      <a href="login_page.php">login</a>
-    </li>
+   
   </ul>
 
   <div class="heading">
@@ -133,8 +131,8 @@ include_once "displayUser.php";
                                                         } else {
       ?>
       <form action="<?php print $_SERVER["PHP_SELF"]; ?>" method="post">
+        
         <div>
-          <div>
             <label for="Username">Username: </label>
             <input type="text" name="Username" placeholder="Username" required>
           </div>

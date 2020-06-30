@@ -42,22 +42,7 @@ include_once "credentials.php";
     <li>
       <a href="2tpifeAbout.php">About</a>
     </li>
-    <li style="float: right">
-      <a href="Signup.php">Signup</a>
-    </li>
-    <form action="<?php print $_SERVER["PHP_SELF"]; ?>" method="post">
-      <div>
-        <div>
-          <label for="Username">Username: </label>
-          <input type="text" name="Username" placeholder="Username" required>
-        </div>
-        <div>
-          <label for="Password">Password: </label>
-          <input type="password" name="Password" placeholder="Password" required>
-        </div>
-      </div>
-      <input type="submit" name="Login" id="loginButton" value="Login">
-    </form>
+
 
   </ul>
   <div class="heading">

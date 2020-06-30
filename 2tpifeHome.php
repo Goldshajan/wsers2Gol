@@ -44,9 +44,7 @@ include_once "displayUser.php";
     <li style="float: right">
       <a href="Signup.php">Signup</a>
     </li>
-    <li style="float: right">
-      <a href="login_page.php">login</a>
-    </li>
+    
     <form action="<?php print $_SERVER["PHP_SELF"]; ?>" method="post">
       <div>
         <div>
